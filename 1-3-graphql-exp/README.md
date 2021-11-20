@@ -5,6 +5,8 @@ localhost:4000 -> apollo 라이브러리에서 제공하는 프로그램 뜬다.
 
 ===
 
+# GraphQL은 왜 탄생했고, 어떤 특성을 가지고 있는가?
+
 query 라고 친다. rest api로 치면 get 같은 거다.
 우리는 팀을 받아올 거기 때문에 일단 teams에 모든 항목을 받아와본다.
 
@@ -206,3 +208,38 @@ rest api를 사용하는 서비스에서도 기술적으로 위와 같은 해결
 대신에 명령어를 정해서 어떤 요청을 할지 상대방에게 알려주는 것이다.
 
 서비스가 어떤 데이터를 어떻게 주고받냐에 따라서 rest api가 더 적합할 때가 있다. 둘의 차이를 이해해야 효율적으로 설계를 할 수 있을 것이다.
+
+===
+
+# Apollo는 무엇인가, 왜 쓰는가?
+
+RestAPI와 마찬가지로, graphql은 한 형식일 뿐이다.
+누군가가 정보를 받을 수 있도록 뭔가 만들어둔 게 아니라는 것이다.
+
+graphql을 구현할 솔루션(라이브러리)이 필요하다.
+
+- 백엔드에서 정보를 제공 및 처리
+- 프론트엔드에서 요청 전송
+- GraphQL.js, GraphQL Yoga, AWS Amplify, Relay, ...
+
+백엔드 단에서 요청이 들어오면 Graphql이 요청을 해석해서 데이터베이스로부터 정보를 꺼내다가 가공 및 처리해서 다시 보내주는 것이다.
+또 프론트 단에서도 해당 형식에 맞게 graphql 요청을 보낼 수 있어야 한다.
+백엔드, 프론트 모두에서 graphql 명세대로 정보를 요청하고 답신해주는 솔루션이 필요하다.
+
+graphql에서 정식으로 제공하는 graphql.js가 있고, graphql yoga도 많이 사용되는 백엔드단 라이브러리 중 하나다. 프론트단에서는 aws amplify, relay 등이 있다.
+
+https://graphql.org/code/
+
+각 언어나 환경, 클라이언트, 서버단 마다 프로젝트에서 사용할 수 있는 graphql 라이브러리를 찾아서 쓸 수 있다.
+
+이 많은 라이브러리들 중에서 Apollo를 사용하는 이유는
+
+- 백엔드와 프론트엔드 모두 제공
+- 간편하고 쉬운 설정
+- 풍성한 기능들 제공
+
+https://www.apollographql.com/docs/apollo-server/
+https://www.apollographql.com/docs/react/
+
+아폴로 프론트단 문서에는 리액트가 나와 있지만, Vue에서도 Apollo를 사용할 수 있다.
+먼저 apollo server를 활용해서 백엔드 서버를 제작하고, 이를 심화한 다음 apollo client와 react를 활용해서 프론트엔드 웹을 제작할 것이다.
